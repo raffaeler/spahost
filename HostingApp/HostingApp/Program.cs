@@ -39,7 +39,13 @@ namespace HostingApp
             app.UseHttpsRedirection();
             app.UseCors(corsPolicy);    // raf
             app.UseRouting();           // raf
-            app.UseStaticFiles();       // raf
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                // set this to true to serve WebAssembly files
+                // set this to false to serve other web-only SPA apps like react
+                //
+                ServeUnknownFileTypes = true
+            }); // raf
 
             app.UseAuthorization();
 
