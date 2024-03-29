@@ -8,6 +8,8 @@ function App() {
   const [result, setResult] = useState("");
   const [isError, setIsError] = useState(true);
 
+  console.log("Environment variables", process.env);
+
   const invokeAPI = async () => {
     try {
       const response = await fetch("https://localhost:7242/WeatherForecast", {
