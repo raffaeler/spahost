@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostingApp", "HostingApp\HostingApp.csproj", "{3143FC97-6985-4A81-B2EC-21E6AB8B902F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostingAppMinimalAPI", "HostingAppMinimalAPI\HostingAppMinimalAPI.csproj", "{A2EE75A3-C6C7-4ED0-95B1-ECCB2A32D9DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3143FC97-6985-4A81-B2EC-21E6AB8B902F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3143FC97-6985-4A81-B2EC-21E6AB8B902F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3143FC97-6985-4A81-B2EC-21E6AB8B902F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2EE75A3-C6C7-4ED0-95B1-ECCB2A32D9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2EE75A3-C6C7-4ED0-95B1-ECCB2A32D9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2EE75A3-C6C7-4ED0-95B1-ECCB2A32D9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2EE75A3-C6C7-4ED0-95B1-ECCB2A32D9DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

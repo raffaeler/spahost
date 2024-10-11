@@ -2,7 +2,9 @@
 
 # spahost
 
-The goal is hosting a SPA (react) from ASP.NET without using the Visual Studio template or using the ASP.NET SPA services.
+The goal is hosting a SPA (react) from ASP.NET without using the Visual Studio template or using the ASP.NET SPA services. The same strategy can be used for any other SPA framework.
+
+This completely separates the front-end and the back-end tasks which are normally developed by separate teams. Also, it's more likely the UI to be developed using Visual Studio Code while the back-end with Visual Studio.
 
 The folder structure is supposed to be the following:
 
@@ -23,7 +25,7 @@ The folder structure is supposed to be the following:
 * `\spahost\HostingApp\HostingApp\wwwroot` is the folder that will be wiped and overwritten with the artifacts produced by `npm run build`
 * `\spahost\spa\frontend` contains the react project created with `npx create-react-app frontend`. The `package.json` file is in this folder.
 
-## react application
+## The react application
 
 The application is created using:
 
@@ -105,7 +107,13 @@ app.Run();
 * `AddCors` and `UseCors` are required during the frontend development but not from the deployed application. During development the `frontend` app is hosted on a different domain (the development server) and requires the WebApi to know it. After publishing, everything is served from the Kestrel webserver and Cors is not needed anymore.
 * `UseRouting` is needed to configure the routing with `UseEndopoints`
 * `UseStaticFiles` by default looks into the `wwwroot`
-* `MapControllers` must be replaced with `UseEndpoints`
+* `MapControllers` must be replaced with `UseEndpoints`. Starting from .NET 8 the analyzer suggest migrating the `UseEndopoints` to `app.MapFallbackToFile("/index.html");`
+
+## Minimal API
+
+The project `HostingAppMinimalAPI` is the exact replica of `HostingAppMinimal` but uses the latest (.NET 8) template based on the Minimal API in ASP.NET Core which is the preferred method in ASP.NET Core to serve the endpoints.
+
+There is no much difference, but I preferred to publish a separate project for this new template to avoid any kind of confusion.
 
 ## Final considerations
 

@@ -50,12 +50,19 @@ namespace HostingApp
             app.UseAuthorization();
 
 
+            // The template generates:
             //app.MapControllers();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.MapFallbackToFile("/index.html");
-            });
+
+            // The following code was used in .NET 6
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllers();
+            //    endpoints.MapFallbackToFile("/index.html");
+            //});
+
+            // This other code uses the minimal API:
+            app.MapControllers();
+            app.MapFallbackToFile("/index.html");
 
             app.Run();
         }
